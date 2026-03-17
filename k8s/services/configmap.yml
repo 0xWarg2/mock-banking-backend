@@ -1,0 +1,14 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: app-config
+  namespace: mockbank
+data:
+  SPRING_PROFILES_ACTIVE: docker
+  SPRING_DATASOURCE_URL_ACCOUNT: jdbc:postgresql://postgres:5432/account_db
+  SPRING_DATASOURCE_URL_TRANSACTION: jdbc:postgresql://postgres:5432/transaction_db
+  SPRING_DATASOURCE_USERNAME: mockbank
+  SPRING_DATASOURCE_PASSWORD: mockbank123
+  SPRING_DATA_REDIS_HOST: redis
+  SPRING_KAFKA_BOOTSTRAP_SERVERS: kafka:9092
+  APP_ACCOUNT_SERVICE_BASE_URL: http://account-service:8081

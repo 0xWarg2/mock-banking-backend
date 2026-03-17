@@ -1,0 +1,29 @@
+server:
+  port: 8083
+
+spring:
+  application:
+    name: notification-service
+  kafka:
+    bootstrap-servers: localhost:29092
+    consumer:
+      group-id: notification-group
+      auto-offset-reset: earliest
+      key-deserializer: org.apache.kafka.common.serialization.StringDeserializer
+      value-deserializer: org.springframework.kafka.support.serializer.JsonDeserializer
+      properties:
+        spring.json.trusted.packages: "com.mockbank.*"
+        spring.json.type.mapping: "transactionCompleted:com.mockbank.notification.event.TransactionCompletedEvent"
+
+app:
+  site-id: LOCAL
+
+logging:
+  pattern:
+    console: "%d{HH:mm:ss.SSS} [%X{siteId:-NO_SITE}] %-5level %logger{36} - %msg%n"
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: health,info,prometheus

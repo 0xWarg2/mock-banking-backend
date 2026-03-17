@@ -1,0 +1,6 @@
+rootProject.name = 'mock-banking-backend'
+
+include 'account-service'
+include 'transaction-service'
+include 'notification-service'
+include 'api-gateway'

@@ -1,0 +1,8 @@
+app:
+  site-id: DC2
+
+spring:
+  kafka:
+    bootstrap-servers: kafka-dc2:9092
+    consumer:
+      group-id: notification-group-dc2

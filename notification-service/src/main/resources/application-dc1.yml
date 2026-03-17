@@ -1,0 +1,7 @@
+app:
+  site-id: DC1
+
+spring:
+  kafka:
+    consumer:
+      group-id: notification-group-dc1

@@ -1,0 +1,9 @@
+spring:
+  datasource:
+    url: jdbc:postgresql://postgres:5432/transaction_db
+  kafka:
+    bootstrap-servers: kafka:9092
+
+app:
+  account-service:
+    base-url: http://account-service:8081

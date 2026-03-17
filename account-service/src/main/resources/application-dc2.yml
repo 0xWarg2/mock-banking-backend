@@ -1,0 +1,9 @@
+app:
+  site-id: DC2
+
+spring:
+  datasource:
+    url: jdbc:postgresql://postgres:5432/dc2_account_db
+  data:
+    redis:
+      host: redis-dc2

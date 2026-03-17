@@ -1,0 +1,18 @@
+app:
+  site-id: DC2
+
+spring:
+  cloud:
+    gateway:
+      routes:
+        - id: account-service
+          uri: http://account-service-dc2:8081
+          predicates:
+            - Path=/api/accounts/**
+        - id: transaction-service
+          uri: http://transaction-service-dc2:8082
+          predicates:
+            - Path=/api/transactions/**
+  data:
+    redis:
+      host: redis-dc2

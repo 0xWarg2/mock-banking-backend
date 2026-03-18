@@ -14,7 +14,7 @@ services:
       - ./init-db.sql:/docker-entrypoint-initdb.d/01-init-db.sql
       - ./init-db-multisite.sql:/docker-entrypoint-initdb.d/02-init-db-multisite.sql
     healthcheck:
-      test: ["CMD-SHELL", "pg_isready -U mockbank"]
+      test: ["CMD-SHELL", "pg_isready -U mockbank -d account_db"]
       interval: 5s
       timeout: 5s
       retries: 5

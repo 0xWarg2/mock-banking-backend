@@ -1,12 +1,10 @@
 app:
   site-id: DC2
+  account-service:
+    base-url: http://account-service-dc2:8081
 
 spring:
   datasource:
     url: jdbc:postgresql://postgres:5432/dc2_transaction_db
   kafka:
     bootstrap-servers: kafka-dc2:9092
-
-app:
-  account-service:
-    base-url: http://account-service-dc2:8081
